@@ -1,0 +1,621 @@
+SECURITE 42
+###########
+
+http://clement.quillet.tel/
+http://david-masson.me/
+http://www.plaisircouteaux.com/
+http://clg-poisson-pithiviers.tice.ac-orleans-tours.fr/php5/195.83.89.166
+------------------------------
+
+Gestionnaire de MDP :
+Checker Keepass qui APPAREMMENT resiste aux keyloggers.
+
+------------------------------
+
+Google hacking for penetration testing :
+http://www.mrjoeyjohnson.com/Google.Hacking.Filters.pdf
+
+------------------------------
+
+Si vous voulez des confs en secu (niveau beginner) en francais de mec pas mauvais: https://www.pseshsf.org/fr/archives-et-videos/2016/ 
+Je vous recommande celle de Aeris Le mec connait son sujet Allez piocher en 2015/2014 également
+
+
+
+
+
+
+
+
+================================================================================================================================
+################################################################################################################################
+================================================================================================================================
+
+Base Hacking :
+http://ekladata.com/gulpzZVDEliLIx88zBHvp8UL5nM/Les-bases-du-hacking.pdf
+
+ARRETE A : p 119 Extraire des informations du DNS
+
+
+Creer un laboratoire de hack avec plusieurs machines virtuelles non connecté a internet pour eviter d'attaquer des gens.
+Si on donne les memes adresses reseaux aux machines on peut les faire interagir enssemble.   
+Une machine virtuelle Kali, une metasploitable et une Windows XP.
+
+4 Phases :
+	- Reconnaissance 		(Reccueil d'informations)
+	- Scan					(Scan des ports / Scan des vulnérabilités)
+	- Exploitation			(Attaque)
+	- Postexploitation 		(maintien d'accès via porte dérobée par exemple)
+	- Phase finale : Masquage OU Camouflage des traces.
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+									PHASE 1  -> RECONNAISSANCE
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+"Que l’on me donne six heures pour couper un arbre, j’en passerai quatre à préparer ma hache. A.Lincoln"
+
+Phase indispensable. Plus vous passerez du temps à collecter des informations sur votre cible, 
+plus les phases suivantes auront une chance de réussir. Un collecteur d’informations efficace 
+est constitué à parts égales d’un hacker, d’un ingénieur social et d’un détective privé.
+
+- Recherche d'informations publiques (ROSO).
+	Cette phase a deux objectifs principaux : premièrement recueillir autant d’informations que possible sur la cible
+	et deuxièmement : trier toutes ces informations et créer une liste d’adresses IP ou d’URL attaquables.
+	Des le moment ou on clique sur un lien lié a l'entreprise, on passe en recherche active car potentiellement reperable.
+
+- Une stratégie classique comprend une reconnaissance active et une reconnaissance passive.
+	+ La reconnaissance active demande une interaction directe avec la cible.
+	  Faudra donc passer par une IP tronquée pour pas se faire griller.
+	+ La reconnaissance passive se fonde sur les informations disponibles sur le Web.
+
+- Le but est de recueuillir autant d'inormatiosn que possible, aucun detail ne doit etre ignoré.
+	Il est important de conserver les données recueillies dans un lieu central.
+
+- La première phase débute souvent par un examen minutieux du site web de la cible.
+	HTTrack comme outil pour avoir une copie de toutes les pages du site a consulter hors ligne.
+
+- Il est important de prêter attention à certains éléments, comme les actualités et les annonces. Les entreprises sont
+	souvent fières de leurs prouesses et laissent filer par mégarde des informations dans les articles. 
+	Les fusions et les acquisitions d’entreprises peuvent également fournir des données intéressantes, notamment pour
+	augmenter l’étendue du test d’intrusion et lui ajouter des cibles supplémentaires.
+
+- Il est important de rechercher et d’examiner les offres d’emploi technique proposées par la société cible. 
+	En effet, elles dévoilent souvent des informations très détaillées sur les technologies mises en oeuvre au
+	sein de la société. Vous pourrez notamment y voir mentionnés du matériel et du logiciel spécifiques.
+
+- Nous devons avoir une bonne connaissance de l'entreprise, notamment qui elle est, ce qu’elle fait, 
+	où elle se trouve et quelles technologies elle emploie.
+
+- Chercher avec les requètes marquées dans astuce comme cache:site.com ou autre.
+
+- inurl: + login/logon/Signin/Signon/Forgotpassword/Forgot/reset
+	Peut permettre de trouver de pages dynamiques contenant potentiellement des failles.
+
+- Chercher sur plusieur moteurs de recherche : Google, Yahoo, Bing, Ask, Dogpile et les autres.
+	Chacun peut sortir des resultats differents. Il est donc important de chercher sur un maximum.
+
+- Les groupes de nouvelles et les BBS (Bulletin Board System) comme UseNet et Google Groupes peuvent se révéler très utiles 
+	lors du recueil d’informations sur la cible. Les forums d’aide, les systèmes de discussion et les fonctions de chat 
+	en direct avec un représentant de la société peuvent recéler des informations intéressantes.
+
+- Ingenierie sociale :
+	La maniere la plus puisante d'obtenir des informations et d'exploiter les failles humaines.
+	Tout le monde n'est pas un bon ingenieur social. Ca demande uen grande assurance et de la pratique.
+	Si l’opération se fait par téléphone, il sera extrêmement utile d’avoir des notes détaillées et bien rédigées 
+	pour le cas où des détails vous seraient demandés.
+
+	Exemple :
+		On contacte par mail le service client.
+		On reçoit un mail en reponse qu'on peut analyser, avec l'entete et recuperer le nom ou autre.
+		Suite a la demande par mail admettosn qu'on reçoive un mail qui dit qu'il est en vacances.
+		On peut se faire passer pour lui par telephone et demander un reinitialisation du mdp de messagerie.
+		Si il est con et utilise le meme mdp pour tout c'est easywin. 
+
+- Une autre possibilité est de laisser des clés USB ou des CD dans l’entreprise cible.
+	Avec une etiquette style :"Rapports des entretiens annuels", "Proposition de réduction des effectifs", etc..
+	
+
+
+
+
+PASSER LES INFORMATIONS AU CRIBLE
+---------------------------------
+Une fois la reconnaisance terminer, il fut passer beaucoup de temps a examiner minutuieusement les infos collectées.
+Il est pratique de faire des listes séparées des IP, URL, DNS, Adresses electroniques, etc..
+Le but est de transformer les données en cibles attaquable graces aux divers outils ispos.
+
+Une fois les bases maitrisées, voici quelques techniques et outils avancés pour approfondir : 
+
+- Utiliser d'autres moteurs de recherche que google et connaitre leurs "langages"
+
+- Sous windows, FOCA et SearchDiggity permettent d'extraire des meta données. Une fois ces outils bien maitriés
+	ils sont ultra puissants.
+	http://www.informatica64.com/foca.aspx
+
+- Consulter la base de donnée du hacking google GHDB.
+
+- Maltego Et Paterva sont des programmes qui agregent des informations de BDD publique qui peuvent forunir
+	des détails extremement précis sur une cible. La maitrise demande du temps mais est tres puissante.
+
+- RobTex. Un outil pour recuperer diverses infos grace a un nom de domaine
+
+
+
+
+|----------------------------------------------------------------------------------------------------------------
+| 											OUTILS PHASE 1 
+|----------------------------------------------------------------------------------------------------------------
+| 
+| HTTrack :
+| --------- 
+| 			http://www.httrack.com/  OU  apt-get install httrack
+| Permet d'effectuer une copie de toutes les pages d'un site afin de pouvoir les consulter hors ligne.
+| Pratique pour eviter de se ballader trop longtemps sur le serveur web de l'entreprise qu'on va attaquer.
+| Car chaque interation avec le site peut laisser des empreintes digitales numériques.
+| MAIS le clonage d’un site web est facile à repérer et est considéré comme fortement offensif.
+| 
+| Lancement : httrack
+| Enregistré de base dans : /root/websites/nom_du_projet
+| Pour utiliser le site en hors ligne, on lance firefox et en URL : /root/websites/nom_du_projet
+| 
+| 
+| 
+| 
+| The Harvester :
+| ---------------
+| Permet de cataloguerrapidement et précisément les adresses de courrier électronique et les
+| sous-domaines directement liés à la cible.
+| 
+| TOUJOURS UTILISER LA DERNIERE VERSION
+| 
+| Peut etre utilisé avec les serveurs de Google, Bing, PGP, etc..
+| 
+| Il n’est pas rare que les entreprises utilisent les mêmes noms d’utilisateurs au sein de leur réseau
+| et dans les adresses électroniques.
+| 
+| Commande : theharvester
+| 
+| Exemple utilisation : theharvester –d syngress.com –l 10 –b google
+|     -d = Domaine cible
+|     -l = Limite le nombre de résultats renvoyés
+|     -b = Le repertoire publique (ici google)
+|     -b all = PErmet de chercher dans tous les referentiels connus.
+| 
+| La phase 1 de reconnaissance est très cyclique car elle mène souvent à la découverte de nouvelles cibles qui, 
+| à leur tour, demandent une reconnaissance supplémentaire, etc..
+| Ca peut prendre donc pas mal de temps mais mener a des infos indispensables !
+| 
+| 
+| 
+| 
+| Whois :
+| -------
+| http://www.whois.net 
+| Permet de récupérer les adresses IP ou les noms d’hôtes des serveurs DNS et des infos de contact (mail, tel..)
+| 
+| Commande : whois Domaine_cible
+| 
+| 
+| 
+| 
+| Netcraft :
+| ----------
+| http://news.netcraft.com
+| On effectue les recherches dans "What's that site running ?" a droite de la page.
+| Netcraft renvoie tous les sites web qu’il connaît et qui comprennent les mots recherchés.
+| 
+| Ca nous sort des liens, et on peut cliquer sur le document fourni dans "site report". Le rapport peut fournir 
+| des infos genre IP et le système d’exploitation du serveur web, ainsi que le serveur DNS.
+| 
+| 
+| 
+| 
+| Host :
+| ------
+| Très souvent, les actions de reconnaissance produiront non pas des adresses IP mais des noms d’hôtes. 
+| Lorsque c’est le cas, host se chargera d’en faire la traduction à notre place.
+| 
+| Commande : host nom_hôte_cible
+| 
+| La commande host peut également marcher à l'envers et donc convertir une IP en nom d'hote.
+| 
+| Commande : host addresse_IP
+| 
+| Le man host est disponible pour plus d'infos sur les options (needed).
+| 
+| 
+| 
+| 
+| Extraires des informations du DNS :
+| ===================================
+| Les DNS peuvent contenir des informations de grande valeurs. C'est une traduction des IP en noms de domaines.
+| Avant de pouvoir démarrer l’examen d’un serveur DNS, nous avons besoin d’une adresse IP.
+| Nous en avons normalement récolté pas mal, que ce soit en IP ou en nom d'hote (Convertissable avec : host)
+| 
+| Une des premières actions consiste à tenter un transfert de zone.
+| Les serveurs DNS conservent des enregistrements qui mettent en correspondance l’adresse IP et le nom d’hôte 
+| pour tous les appareils qu’ils connaissent. Parfois plusieurs serveurs DNS sont déployés
+| Ces serveurs ont besoin d’un mécanisme pour partager des informations : le transfert de zone. Au cours de ce transfert,
+| également appelé AXFR, un serveur envoie toutes les correspondances hôte-vers-IP qu’il contient à un autre serveur DNS.
+| 
+| 
+| 	NSLookup :
+| 	----------
+| 	Permet d’interroger les serveurs DNS et d’obtenir des enregistrements sur les différents hôtes qu’ils connaissent.
+| 	Utiliser host et nslookup pour déterminer le serveur de messagerieélectronique de la cible.
+| 	
+| 	Commande :
+| 	
+| 	nslookup 			//Un chevron apparait lors du lancement.	(man nslookup)
+| 	server 8.8.8.8		//On tape  server, suivi de l’adresse IP du serveur DNS à interroger. E
+| 	set type=any		//On précise ensuite le type d’enregistrement qui nous intéresse
+| 	
+| 	
+| 	
+| 	Dig :
+| 	-----
+| 	Permet d'extraire des informatiosn du DNS ciblé.
+| 	
+| 	Commande : dig @ip_cible
+| 	
+| 	Exemple : dig @192.168.1.23 example.com –t AXFR
+| 		-t AXFR = Pour effectuer un trasfert de zone
+| 	
+| 	Si les transferts de zone sont autorisés et non limités, nous obtenons une liste des hôtes et des adresses IP 
+| 	fournie par le serveur DNS associé au domaine cible. (Le transfert de zone marche rarement)
+| 	
+| 	
+| 	
+| 	Fierce :
+| 	--------
+| 	Fierce est un script Perl facile à utiliser qui permet d’obtenir de nombreuses cibles supplémentaires.
+| 	
+| 	Commande : fierce -dns domainecible.com
+| 
+| 	Il essayera de faire un transfert de zone complet, sinon il essaie de déterminer des noms d’hôtes de
+| 	manière brutale en envoyant des requêtes sur le serveur DNS cible.
+| 
+| 
+| 
+| 
+| 
+| 
+| Extraires des serveurs de messagerie :
+| ======================================
+| "Il est impossible de bloquer ce qui doit entrer".
+| Autrement dit, pour que les mails fonctionennt, un trafic externe doit passer au travers des périphériques
+| de périmètre, comme les routeurs et les pare-feu. C’est pourquoi nous pouvons souvent recueillir des éléments
+| d’information importants en interagissant directement avec le serveur de messagerie.
+| 
+| L’une des premières actions consiste à envoyer un courrier électronique à l’entreprise en joignant 
+| un fichier .bat ou un fichier .exe non malveillant, comme calc.exe en esperant qu'il le rejette.
+| 
+| Lorsque le message refusé nous revient, nous pouvons en extraire des informations. Le corps du message recus 
+| précise souvent le fournisseur et la versionde l’antivirus qui a servi à analyser le message. 
+| En tant qu’assaillant, cette information est de première importance. Il permet egalement d'inspecter les en-tete
+| et en extraire des infos comme des IP, la version ou marque du logiciel.
+| 
+| 	MetaGooFil :
+| 	------------
+| 	(Marche pas et pas trouvé pourquoi)
+| 	Il s’agit d’un outil d’extraction de métadonnées. Elles comprennent souvent le nom du fichier, sa taille, 
+| 	son propriétaire (ou la personne qui l’a créé) et l’emplacement dans lequel il a été enregistré.
+| 	MetaGooFil est un outil qui permet de fouiller Internet à la recherche de documents appartenant à la cible.
+| 
+| 	Commande : metagoofil -d syngress.com –t pdf,doc,xls,pptx –n 20 -o files –f results.html
+| 					-d = Nom de domaine.
+| 					-t = Le ou les types de fichiers 
+| 					-n = le nombre de fichiers
+| 					-o = Nom du dossier ou enregistrer (a creer avant)
+| 					-f = le fichier qui en ressortira (en html plus simple a consulter)
+| 
+| 
+| 	thrreat Agent :
+| 	---------------
+| 	(down ?)
+| 	https://www.threatagent.com (Need un compte)
+| 	Threat agent Drone permet de trouver des infomations variées sur la cible via un nom det nom de domaine.
+| 	Apres extracton, , il affiche un rapport qui comprend des plages d’adresses IP, des adresses de courrier électronique, 
+| 	des points de contact dans l’entreprise, des ports ouverts (avec Shodan) et bien d’autres éléments.
+| 
+| 
+|------------------------------------------------FIN OUTILS 1----------------------------------------------------------------
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+											PHASE 2 -> SCAN
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+Installation metasploitable :
+VB -> new -> Linux -> OtherOS(64bit)
+user/mdp : msfadmin/msfadmin
+
+Au cours de cette phase nous associerons des adresses IP a des ports et a des services ouverts.
+Les scans ont pour objectif d’identifier les systèmes actifs et les services qui existent sur ces systèmes.
+
+Dans le cadre de notre méthodologie, nous décomposons la phase 2 en quatre étapes distinctes :
+1. Déterminer si un système est actif avec des paquets ping.
+2. Scanner les ports du système avec Nmap.
+3. Utiliser le moteur de scripts de Nmap (NSE, Nmap Scripting Engine) pour examiner de façon plus précise la cible.
+4. Scanner le système à la recherche de vulnérabilités avec Nessus.
+
+- L’étape 2.1 consiste à déterminer si un système cible est allumé et s’il est capable de communiquer ou d’interagir avec 
+notre machine. Elle est la moins fiable et doit toujours être suivie des étapes 2.2 à 2.4 quel que soit le résultat du test.
+Peu importe, il faut mener à bien cette étape et noter toutes les machines qui sembleront actives.
+
+- L’étape 2.2 a pour objectif d’identifier les ports et services qui s’exécutent sur un hôte donné.
+	Chaque port ouvert est une porte potentielle
+	Ports répendus et le services associés : 
+		20 Transfert de données FTP
+		21 Contrôle FTP
+		22 SSH
+		23 Telnet
+		25 SMTP (messagerie électronique)
+		53 DNS
+		80 HTTP
+		137-139 NetBIOS
+		443 HTTPS
+		445 SMB
+		1433 MSSQL
+		3306 MySQL
+		3389 RDP
+		5800 VNC au-dessus de HTTP
+		5900 VNC
+
+- L’étape 2.3 exploite le moteur de scripts de Nmap (NSE, Nmap Scripting Engine) pour pousser plus loin l’interrogatoire
+Il donne la possibilité d’utiliser des scripts personnalisés afin de vérifier les découvertes, d’identifier de nouveaux
+processus ou vulnérabilités, et d’automatiser de nombreuses techniques de test d’intrusion.
+
+- L’étape 2.4 conclut notre approche par un scan des vulnérabilités. Il s’agit de localiser et d’identifier 
+des faiblesses connues dans les services et les logiciels qui s’exécutent sur une machine cible.
+
+Compromettre une machine et l’utiliser comme tremplin pour attaquer une autre machine se nomme "pivoter". 
+Cette technique est souvent employée lorsque la machine cible est connectée à un réseau mais sans être atteignable 
+directement depuis notre emplacement. Cette procédure cyclique nous permet de créer une carte très détaillée 
+du réseau interne et de découvrir l’infrastructure critique qui se cache derrière le pare-feu d’entreprise.
+
+
+Une fois que le scan des ports de la cible est terminé, nous disposons d’une liste de ports ouverts et de services. 
+Ces informations doivent être documentées et étudiées attentivement.
+On peut essayer de se connecter via Telnet ou SSH avec des id/Mp de base ou avec des mails/id récupérés plus tot.
+telnet ip_cible
+ssh root@ip_cible
+Peu probable que ca marche mais si oui c'est victoire.
+
+
+|----------------------------------------------------------------------------------------------------------------
+| 											OUTILS PHASE 2 
+|----------------------------------------------------------------------------------------------------------------
+ 
+Ping et balayage ping :
+-----------------------
+Un ping est un type de paquet réseau particulier appelé paquet ICMP.
+Si l’appareil qui reçoit le paquet ping est allumé et est configuré pour répondre, il renvoie à la machine d’origine 
+un paquet de réponse ICMP Echo.
+Cela nous permet non seulement de savoir qu’un hôte est actif et accepte un trafic, mais également de connaître le temps total 
+qu’il faut au paquet pour atteindre la cible et revenir.
+
+Commande : ping google.com 		//(Ou IP) ctrl+c pour arreter.
+
+Retour : 64 bytes from par03s12-in-f24.1e100.net (173.194.45.56): icmp_req=1 ttl=54 time=29.9 ms
+
+			//"from par03s12-in-f24.1e100.net (173.194.45.56):" précise le nom d’hôte et l’adresse IP qui a répondu
+			//icmp_seq=" indique l’ordre du paquet
+			//"ttl=54" correspond à une valeur de durée de vie (pour déterminer le nombre de sauts)
+			//"time=29.9 ms" correspond à la durée totale du voyage des paquets vers et depuis la cible.
+Si la cible est éteinte ou si elle bloque les paquets ICMP, vous verrez une perte de paquets de 100% ou
+un message qui signale que l’hôte est inatteignable
+
+Puisque les paquets ping peuvent nous aider à savoir si un hôte est actif, nous l'utilisons comme un service de découverte d’hôtes.
+Il existe plusieurs outils qui permettent d’effectuer des balayages ping. Il s’agit d’une suite de ping envoyés automatiquement 
+à une plage d’adresses IP. Il existe la commande fping (man fping).
+
+Commande : fping -a -g 172.16.45.1 172.16.45.254 > hôtes.txt
+				//-a permet d’inclure dans la sortie uniquement les hôtes actifs.
+				//-g permet de définir la plage des adresses IP à balayer. Start et End
+				//> hôtes.txt revient a mettre le resultat dans hote.txt
+
+
+Scan des ports :
+----------------
+(a bien creuser, seems important)
+
+On poursuit avec un scan des ports de chaque adresse IP trouvée. Chaque ordinateur dispose d’un total de 65 536 ports.
+Ils peuvent répondre aux protocoles TCP ou UDP Nous scannons un ordinateur afin de connaître les ports utilisés ou ouverts. 
+Cela nous permet d’avoir une meilleure idée  du rôle de la machine, et donc de la manière de l’attaquer.
+Il est nécéssaire de faires tous les types de scans pour etre sur. Pour cela on utilisera Nmap.
+
+L’option -T de Nmap permet de modifier la rapidité du scan des ports. (de 0 à 5, 0 plus lent mais plus precis)
+L’option -O sera utile pour déterminer le système d’exploitation.
+
+
+Scan TCP connect :
+------------------
+Ce type de scan est le plus simple et stable. car Nmap tente une connexion complete en trois etapes.
+Sans préciser une plage de ports, Nmap scannera les 1000ports les plus utilisés. A moins d'etre pressé, il est recommandé
+de scanner les 1000 plus tous les autres meme les cachés
+
+Commande : nmap -sT -p- -Pn 192.168.56.102
+				//-sT indique à Nmap d’effectuer un scan TCP Connect (-s = le type de scan et T = TCP)
+				//-p- Pour scanner TOUS les ports au lieu des 1000 de base
+				//-Pn oblige Nmap a scanner tous les ports comme si ils etaient actifs
+
+On peut aussi lui préciser une plage d'adresse : nmap -sT -p- -Pn 192.168.56.1-254
+Il peut aussi lire des IP depuis un fichier texte passé avec l'option -iL chemin_du_fichier
+
+
+Scans SYN :
+-----------
+
+C'est le mode par défaut de nmap (si on ne precise pas d'option). Plus rapide parce que ;oins de paquets échangés.
+Un scan SYN équivaudrait à l’appel d’une personne, au décrochage du téléphone par et sa réponse "Allô ?", 
+puis au raccrochage sans autre mot. Dans certains cas, il est plus discret et furtif vu qu'il effectue 2/3 des etapes.
+Pour l'utiliser il suffit de ne pas mettre l'option -sT OU de mettre l'option -sS.
+
+
+Scans UDP :
+-----------
+
+A ne pas négliger ! TCP est un "protocole orienté connexion", il exige des communications synchronisées entre 
+l’émetteur et le récepteur. UDP est un protocole "sans connexion" car l’expéditeur envoie simplement des
+paquets au destinataire. Certains services sont basés dessus, comme HCP, DNS, SNMP, TFTP.
+L'option est -sU  (sans le -p- et -Pn) ce scan est tres lent meme un scan sur les 1000 ports peut etre tres long.
+Il n'exite pas de moyen de savoir si le port est bel est bien ouvert et renverra par defaut "ouvert | filtré".
+Si par miracle un port répond, il renverra alors "ouvert".
+Pour une réponse plus intéréssante on ajoute l'option -sV (scanne les versions et restreint les résultats du scan).
+La commande : nmap -sUV 192.168.56.102
+
+
+-!- Les scans suivant ne sont fiables qu’avec les OS qui se conforment intégralement à la RFC de TCP (unix) -!-
+
+Scan Xmas :
+-----------
+
+RFC est un document qui fournit des notes ou des spécifications techniques sur une technologie ou une norme.
+On peut le consulter afin le savoir si le systeme aurait pas des failles. Les scans Xmas Tree et Null exploitent simplement 
+une faille découverte ainsi. Si le système que nous scannons respecte la RFC nous pouvons envoyer l’un de ces paquets pour 
+déterminer l’état courant du port. Si un port fermé reçoit un paquet dans lequel un drapeau SYN, ACK ou RST n’est pas 
+positionné (le type de paquets créé par un scan Xmas Tree), alors, le port doit répondre par un paquet RST.
+Si un port ouvert reçoit un paquet sans drapeau SYN, ACK ou RST, ce paquet doit être ignoré. Option : -sX
+(Fonctionne pas avec les systemes windows)
+
+
+Scan NULL :
+-----------
+
+Un scan NULL est en qq sorte l'iverse d'un Xmas Tree, basé sur des paquets completement dépourvus de drapeaux, ils sont vide.
+Comme pour Xmas, un port ouvert de renverra aucune réponse et un fermé renverra un RST. Un avantage des scans Xmas Tree et
+NULL est que dans certains cas, ils permettent de contourner les filtres simples et listes de controle d'acces (ACL).
+Il est important de ne pas oubleir que leur seul but Leur objectif est de déterminer si un port est ouvert ou fermé.
+Puisque le filtre ne rejette que les paquets entrants dontle drapeau SYN est positionné, il laisse passer les paquets 
+Xmas Tree et Null qui qurqient été rejetés en TCP. On découvre donc de nouveaux ports. Option : -sN
+
+
+Le moteur de script Nmap (NSE) :
+--------------------------------
+http://nmap.org/nsedoc/
+
+Ce moteur de script complète Nmap en apportant des fonctionnalités qui vont bien au-delà des outils classiques de Nmap.
+Il est essentiel de savoir l'utiliser. il permet le scan de vulnérabilités, la découverte avancée de réseaux,
+la détection de portes dérobées et, dans certains cas, la réalisation d’un exploit. NSE répartit les scripts en catégories, 
+dont auth, broadcast, brute, default, discovery, dos, exploit, external, fuzzer, intrusive, malware, safe, version et vuln. 
+Chaque catégorie comprend différents scripts, chacun mettant en oeuvre une fonction précise. L'outil dispose d'une communauté 
+tres active, de nouveaux scripts et possibilités sont constamment ajoutés.
+
+Commande : nmap --script banner 192.168.56.102 
+				//Le script banner est une extension de Nmap qui crée une connexion sur un port TCP et affiche sur le terminal
+				//toute sortie produite par le système pour identifier des services méconnus attachés à des ports inhabituels.
+
+On peut invoquer l'ntegralite des scripts d'une categories en utilisant le format : nmap --script vuln 192.168.56.102
+La catégorie vuln comprend des scripts qui recherchent des problèmes connus sur le système cible. Affiche des messages
+uniquement si une vulnerabilité a été découverte. Faites particulièrement attention à tout CVE, OSVDB ou lien indiqué.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|------------------------------------------------FIN OUTILS 2----------------------------------------------------
+
+
+
+
+
+
+Vocabulaire et sources :
++-+-+-+-+-+-+-+-+-+-+-+-+
+
+- Pivoter : processus de compromission d’une machine et son utilisation pour compromettre ensuite une autre machine.
+
+- PTES 	: Penetration Testing Execution Standard.	 http://www.pentest-standard.org.
+
+- ROSO 	: renseignement d’origine source ouverte   OU   OSINT Open-SourceIntelligence = Données publiques
+
+- RFC 	: un document qui fournit des notes ou des spécifications techniques sur une technologie ou une norme.
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+
+
+
+
+================================================================================================================================
+################################################################################################################################
+================================================================================================================================
+
+
+
+
+
+
+KALI 
+----
+ID : root  /  mdp : toor
+
+
+- Activer le reseau : //Deja fait de base sur Kali
+	ifconfig -a 						//Afficher les reseaux
+	ifconfig eth0 up 					//Activer la premiere interface reseau
+	ifconfig eth0 up 192.168.1.23 		//assigner une IP a un reseau. Reste a preciser une passerelle et un serveur DNS.
+
+	SINON :
+	dhclient 		//permet d'attriber automatiquemnt une IP et de tout configurer, y compris DNS et la passerelle
+
+- Eteindre Kali : poweroff 		(Mieux vaux eteindre la machine apres chaque test d'intrusion par securité)
+
+- Redemarrer Kali : reboot
+
+
+
+
+
+
+
+
+
+
+Astuces :
+=========
+
+- allintitle:index of
+- inurl:admin
+- cache:syngress.com 			//Recherche dans le cache google les informations du site.
+- site:dsu.edu filetype:pdf 	//Cherche les pdf sur le site dsu.edu
+- http://www.exploit-db.com -> GHDB (Google Hacking Database) regroupe moultes techniques et dorks.	
+
+
+
+GitHub de l"ASN :
+-----------------
+
+https://github.com/asn42
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

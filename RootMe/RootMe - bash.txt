@@ -1,0 +1,69 @@
+_ __ ___   ___ | |_       _ __ ___   ___    ___  _ __ __ _
+| '__/ _ \ / _ \| __| ___ | '_ ` _ \ / _ \  / _ \| '__/ _` |
+| | | (_) | (_) | |__|___|| | | | | |  __/_| (_) | | | (_| |
+|_|  \___/ \___/ \__|     |_| |_| |_|\___(_)\___/|_|  \__, |
+                                                      |___/
+
+app-script-ch11@challenge02.root-me.org's password:
+
+ ------------------------------------------------
+|    Welcome on challenge02.root-me.org!         |
+ ------------------------------------------------
+
+/tmp and /var/tmp are writeable
+
+Useful commands available:
+    python, perl, gcc, netcat, gdb, gdb-peda, gdb-gef, ROPgadget, radare2
+
+Attention:
+  Publishing solutions publicly (blog, github, youtube, etc.) is forbidden.
+  Publier des solutions publiquement (blog, github, youtube, etc.) est interdit.
+
+ ------------------------------------------------
+|    Challenge informations:                     |
+ ------------------------------------------------
+
+./ch11: setuid ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 
+2.6.24, BuildID[sha1]=0x0c126a7464ba9f350dc72b962b31373491c710eb, not stripped
+
+RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
+Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   ./ch11
+
+ASLR is OFF
+
+
+
+
+
+
+
+bit suid (set user ID) = pour faire tourner un programme avec les privilèges de l’utilisateur possédant le fichier ou le programme
+Ce bit est dénoté par un s à la place du x dans la liste des permissions d’un fichier : -rwsr-xr-
+De la même façon, il existe un sgid (set group ID) qui fonctionne de la même façon.
+
+Exemple les utilisateurs souhaitant changer leur mdp doivent taper la commande passwd qui appelle le programme /usr/bin/passwd :
+-rwsr-xr-x 1 root root 29036 2007-06-22 20:10 /usr/bin/passwd
+
+Les programmes de ce type, appartenant au root et ayant le bit suid sont appellés les SRP (suid root programs).
+
+Le .passwd est dans :  /challenge/app-script/ch1/ch1cracked/
+
+
+SUDO :
+------
+
+Sudo Policy Format 		= User Host=(RunAs) Command 	//User = User, Host = Machine host, (RunAs) = target user
+Default Sudo Policy 	= %wheel ALL = ALL 				//Wheel group = total access
+mike ALL = ALL 											//User mike can run anything
+mike dns1 = /usr/sbin/service named User  				//mike can manage the named service on host dns1
+														//Each unique combination needs its own sudoers rule
+kate db1 = (oracle) ALL 								//Kate can do anything as the user oracle.
+
+Commandes :
+-----------
+passwd 					= Changer de mdp
+id 						= Donne les infos savoir ou on est dans l'échelle 
+sudo -u user commande	= Run a Command as Another User (Enter your password not the root)
+sudo -g operator dump 	= 
+
+b3_c4r3full_w1th_sud0
