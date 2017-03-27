@@ -1,0 +1,56 @@
+Reverse Engineering
+###################
+
+Le reverse Engineering comme un NULL : https://piratercommeunnul.wordpress.com/2013/07/06/le-reverse-engineering-comme-un-null-1/
+
+Certains executable peuvent etre ouverts avec un lecteur d'archive (7z par exemple). Chercher autour du principe du « best effort »
+Certains langages comme JAVA ou le flash se compilent en code semi-executable qui doit apres etre lu par une VM.
+Sur le meme principe les PDF ou XLS peuvent sont des conteneurs de fichiers capables d'executer des maccros.
+Ils sont assez simple à décompiler généralement.
+
+Décompilateurs Java : 
+ - http://varaneckas.com/jad/
+ - http://marketplace.eclipse.org/content/jadclipse-eclipse-4x#.Udgsyvmd9mA (plugin eclipse)
+ - http://www.commentcamarche.net/download/telecharger-34056787-cavaj-java-decompiler (Cavaj le plus simple sans environnement)
+
+Décompilateurs Flash :
+ - http://www.flash-decompiler.com/fr/ (La version gratuite sert a rien autant le cracker)
+ - http://www.eltima.com/fr/products/flashdecompiler/
+ - http://www.sothink.com/page/swf-decompiler/flash-decompiler.htm
+
+Ressource Hacker :
+Permet d'acceder aux ressources d'un executable ou d'une librairie, on pourra ainsi les visualiser/extraire/modifier.
+
+OllyDbg : 
+Outil pour casser une protection (en ASM).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
