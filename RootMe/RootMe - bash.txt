@@ -35,7 +35,7 @@ ASLR is OFF
 
 
 
-
+ssh level@site.org -p 22222
 
 bit suid (set user ID) = pour faire tourner un programme avec les privilèges de l’utilisateur possédant le fichier ou le programme
 Ce bit est dénoté par un s à la place du x dans la liste des permissions d’un fichier : -rwsr-xr-
@@ -47,7 +47,6 @@ Exemple les utilisateurs souhaitant changer leur mdp doivent taper la commande p
 Les programmes de ce type, appartenant au root et ayant le bit suid sont appellés les SRP (suid root programs).
 
 Le .passwd est dans :  /challenge/app-script/ch1/ch1cracked/
-
 
 SUDO :
 ------

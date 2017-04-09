@@ -1,0 +1,151 @@
+OverTheWire :
+-------------
+http://overthewire.org/wargames/bandit/bandit1.html
+Whenever you find a password for a level, use SSH to log into that level and continue the game.
+
+ssh bandit0@bandit.labs.overthewire.org
+
+Bandit
+~~~~~~
+level0 	: bandit0
+level1 	: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+level2 	: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+level3 	: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+level4 	: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+level5 	: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+level6 	: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+level7 	: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+level8 	: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+level9 	: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+level10	: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+level11 : IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+level12 : 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+level13 : 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+level14 : 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e 
+level15 : BfMYroe26WYalil77FoDi9qh59eK5xNr
+level16 : cluFn7wTiGryunymYOu4RcffSxQluehd
+level17 : 
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+
+level18 : kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd (PAS FINI)
+
+
+
+SSH :
+=====
+ssh -p 2222 app-script-ch1@challenge02.root-me.org 		//ssh -port 2222 Username@Hote
+ssh -i sshkey.txt bandit14@bandit.labs.overthewire.org 	//Acces SSH avec une clé privée dans sshkey.txt. le fichier doit etre en chmod 600
+ssh -p 30000 user:pwd@blabla.org 						//Pour se connecter directement avec un mot de passe
+~. 														//Deconecte de la session ssh
+openssl s_client -connect localhost:30000		 		//Connection SSL sur localhost au port 30000
+
+####################################################################################################################################
+####################################################################################################################################
+
+SHELL
+#################
+
+
+
+Commandes varriées :
+====================
+
+base64 -d file.txt				//Pour decoder du code en base64
+xxd data.txt 					//Pour decoder ou faire un hexdump ou transformer en binaire
+gzip, bzip2, zcat, tar			//Differentes commandes de compréssion/décompression selon le format (qu'on déduit avec la commande file)
+								//Si file dit qu'ils sont dans un format mais qu'il y a pas l'extension, on peut l'ajouter a la main
+								//EX : gzip -d < data8.bin > decrypted   |   tar -xvf lvl7.bin.tar   |   bzip2 -d < compressed.bin > decrypted
+tr 								//translate or delete characters
+nc 127.0.0.1 30000				//(nc = netcat) Ecoute le port 30000 du localhost | nc = pour tout ce qui est UDP ou TCP
+echo "blabla" | nc 127.0.0.1 66 //Envoi blabla sur le port 66 du localhost pour tester ce que fait le port en fonction nde sa réponse
+netstat -t -l -p 				//Listes tous les ports qui ecoutent et ce a quoi ils servent
+diff fich1 fich2				//Sort toutes les differences entre le fichier1 et le fichier2
+
+
+SUDO :
+======
+
+Sudo Policy Format 		= User Host=(RunAs) Command 	//User = User, Host = Machine host, (RunAs) = target user
+Default Sudo Policy 	= %wheel ALL = ALL 				//Wheel group = total access
+mike ALL = ALL 											//User mike can run anything
+mike dns1 = /usr/sbin/service named User  				//mike can manage the named service on host dns1
+														//Each unique combination needs its own sudoers rule
+kate db1 = (oracle) ALL 								//Kate can do anything as the user oracle.
+
+Commandes :
+-----------
+passwd 					= Changer de mdp
+id 						= Donne les infos savoir ou on est dans l'échelle 
+sudo -u user commande	= Run a Command as Another User (Enter your password not the root)
+sudo -g operator dump 	= 
+
+
+
+
+
+
+####################################################################################################################################
+####################################################################################################################################
+
+WEB
+################
+
+Verb tampering : 
+================
+(Bypasisng UTL authentification)
+
+
+Explications :
+--------------
+Beaucoup d'environnement web sont verb-based, CaD qu'ils utilisent des methodes comme GET et POST meme pour la securité.
+Comme : OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+Et Si l'extension WebDAV est activée, on peut aussi utiliser : PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, UNLOCK
+
+Toutes les methodes autres que GET et POST ne peuvent pas etre appelées dans HTML. Mais avec JS, Ajax, etc oui.
+Tant que le site testé n'appelle pas expressément des méthodes HTTP non standard, le test de falsification HTTP est assez simple.
+Si le serveur accepte une reuete autre que GET ou POST, il est vulnerable.
+
+
+Protection :
+------------
+La solution pour protéger est de desactiver toutes les methodes à part GET et POST.
+
+
+Exploitation manuelle :
+-----------------------
+L'exemple utilise le package netcat (on peut aussi utiliser telnet). Chaque [] de la requete HTTP 1.1 est adaptable :
+
+[METHOD] /[index.htm] HTTP/1.1		GET /index.html HTTP/1		HEAD /index.html HTTP/1.1
+host: [www.example.com]				host: www.example.com		host: www.example.com
+
++ On rajoute une ligne vide en dessous (obligatoire)
+Pour chacune des methodes on envoi la requete au serveur via telnet ou netcat sur le port 80 (HTTP) :
+Commande : nc www.example.com 80 < OPTIONS.http.txt
+
+
