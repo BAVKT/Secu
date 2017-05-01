@@ -6,7 +6,7 @@
 /*   By: vmercadi <vmercadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 14:31:30 by vmercadi          #+#    #+#             */
-/*   Updated: 2017/04/08 16:43:35 by vmercadi         ###   ########.fr       */
+/*   Updated: 2017/04/12 12:57:37 by vmercadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // Compilation : compil rot.c libft.a
@@ -49,7 +49,7 @@ char	*file_to_str(char *av)
 /*
 ** Decale chaque caractere de str par sa valeur ascii + nb dans la fourchette ascii de start a end.
 */
-void 	rot(int nb, char *str)
+void 	rot(int nb, char *str, int start, int end)
 {
 	int 	i;
 	char 	*s;
@@ -58,14 +58,14 @@ void 	rot(int nb, char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] < 'A' && str[i] > 'Z')
+		if (str[i] == ' ')
 		{
-			s[i] = str[i];
+			s[i] = ' ';
 			i++;
 		}
 		else
 		{
-			s[i] = str[i] + nb;
+			s[i] = ((str[i] + nb - start) % ((end - 1) - start)) + start;
 			i++;
 		}
 	}
@@ -82,7 +82,7 @@ int 	main(int ac, char **av)
 	int 	end;
 	char 	*s;
 
-	if (ac != 3)
+	if (ac != 5)
 	{
 		ft_putstrcolor("usage : a.out nbrot fichier start end\n", YELLOW);
 		ft_putstrcolor("- nbrot = Nombre de rotation precise qu'on veut effectuer. 0 pour toute la table ascii 1 par 1.\n", YELLOW);
@@ -99,13 +99,13 @@ int 	main(int ac, char **av)
 	{
 		while (i < end) 				//On fait toute la table ascii depuis espace
 		{
-			rot(i, s);
+			rot(i, s, start, end);
 			i++;
 			ft_putchar('\n');
 		}
 	}
 	else
-		rot(nb, s);
+		rot(nb, s, start, end);
 	free(s);
 	return(0);
 }

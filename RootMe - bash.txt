@@ -53,7 +53,9 @@ dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 -----END RSA PRIVATE KEY-----
 
-level18 : kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd (PAS FINI)
+level18 : kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+level19 : IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+level20 : GbKksEFF4yrVs6il55v6gwY5aVje5f0j
 
 
 
@@ -62,6 +64,7 @@ SSH :
 ssh -p 2222 app-script-ch1@challenge02.root-me.org 		//ssh -port 2222 Username@Hote
 ssh -i sshkey.txt bandit14@bandit.labs.overthewire.org 	//Acces SSH avec une clé privée dans sshkey.txt. le fichier doit etre en chmod 600
 ssh -p 30000 user:pwd@blabla.org 						//Pour se connecter directement avec un mot de passe
+ssh -t bandit18@bandit.labs.overthewire.org /bin/sh 	//L'option -t cree une session tty qui ferme apres que la commande passée soit finie (?)
 ~. 														//Deconecte de la session ssh
 openssl s_client -connect localhost:30000		 		//Connection SSL sur localhost au port 30000
 
@@ -82,10 +85,21 @@ gzip, bzip2, zcat, tar			//Differentes commandes de compréssion/décompression 
 								//Si file dit qu'ils sont dans un format mais qu'il y a pas l'extension, on peut l'ajouter a la main
 								//EX : gzip -d < data8.bin > decrypted   |   tar -xvf lvl7.bin.tar   |   bzip2 -d < compressed.bin > decrypted
 tr 								//translate or delete characters
-nc 127.0.0.1 30000				//(nc = netcat) Ecoute le port 30000 du localhost | nc = pour tout ce qui est UDP ou TCP
+nc 127.0.0.1 300001 				//(nc = netcat) Ecoute le port 30000 du localhost | nc = pour tout ce qui est UDP ou TCP
 echo "blabla" | nc 127.0.0.1 66 //Envoi blabla sur le port 66 du localhost pour tester ce que fait le port en fonction nde sa réponse
 netstat -t -l -p 				//Listes tous les ports qui ecoutent et ce a quoi ils servent
 diff fich1 fich2				//Sort toutes les differences entre le fichier1 et le fichier2
+
+
+
+
+Setuid / Setgid :
+-----------------
+setuid(set user id) 			//Is a permission bit that allows the users to exec a program with the permissions of its owner
+setgid(set group id) 			//Pareil que setuid mais avec le groupe
+
+Avec ls -l si on voit des 's' comme : -rwsr-x---
+
 
 
 SUDO :
@@ -147,5 +161,36 @@ host: [www.example.com]				host: www.example.com		host: www.example.com
 + On rajoute une ligne vide en dessous (obligatoire)
 Pour chacune des methodes on envoi la requete au serveur via telnet ou netcat sur le port 80 (HTTP) :
 Commande : nc www.example.com 80 < OPTIONS.http.txt
+
+####################################################################################################################################
+####################################################################################################################################
+
+STEGANOGRAPHIE :
+################
+
+- Modifier les bits faibles de l'image directement dans les octets RGB. (souvent fichiers BMP)
+	Si le fichier est converti en png, le message se retrouve detruit.
+
+- Certains artistes/entreprises cachent des watermarks dans les images pour les cas de litiges.
+
+- Il existe des outils pour faire de la steganalyse comme "stegdetect".
+
+
+
+
+
+
+
+
+Challenge Pastebin : https://pastebin.com/S5iWjBDa
+
+lvl1 : tinyurl.com/my5gehk | https://img15.hostingpics.net/pics/8182041493491390dechiffrezmoi1.png
+lvl2 : tinyurl.com/lscvhvj | http://image.noelshack.com/fichiers/2017/17/1493496309-2iomzerffihced.png
+lvl3 :
+
+
+
+
+
 
 
