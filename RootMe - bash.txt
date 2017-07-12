@@ -3,10 +3,11 @@ OverTheWire :
 http://overthewire.org/wargames/bandit/bandit1.html
 Whenever you find a password for a level, use SSH to log into that level and continue the game.
 
+
+Bandit :
+~~~~~~~~
 ssh bandit0@bandit.labs.overthewire.org
 
-Bandit
-~~~~~~
 level0 	: bandit0
 level1 	: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
 level2 	: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
@@ -56,16 +57,40 @@ vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
 level18 : kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
 level19 : IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 level20 : GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+level21 : gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+level22 : Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+level23 : 
+
+
+
+
+
+
+
+
+
+
+Natas :
+~~~~~~~
+http://natas0.natas.labs.overthewire.org/
+
+level0 : natas0
+level1 : gtVrDuiDfck831PqWsLEZy5gyDz1clto
+level2 : ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+level3 : sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+level4 : 
+
+
 
 
 
 SSH :
 =====
+~. 														//Deconecte de la session ssh
 ssh -p 2222 app-script-ch1@challenge02.root-me.org 		//ssh -port 2222 Username@Hote
 ssh -i sshkey.txt bandit14@bandit.labs.overthewire.org 	//Acces SSH avec une clé privée dans sshkey.txt. le fichier doit etre en chmod 600
 ssh -p 30000 user:pwd@blabla.org 						//Pour se connecter directement avec un mot de passe
 ssh -t bandit18@bandit.labs.overthewire.org /bin/sh 	//L'option -t cree une session tty qui ferme apres que la commande passée soit finie (?)
-~. 														//Deconecte de la session ssh
 openssl s_client -connect localhost:30000		 		//Connection SSL sur localhost au port 30000
 
 ####################################################################################################################################
@@ -85,11 +110,12 @@ gzip, bzip2, zcat, tar			//Differentes commandes de compréssion/décompression 
 								//Si file dit qu'ils sont dans un format mais qu'il y a pas l'extension, on peut l'ajouter a la main
 								//EX : gzip -d < data8.bin > decrypted   |   tar -xvf lvl7.bin.tar   |   bzip2 -d < compressed.bin > decrypted
 tr 								//translate or delete characters
-nc 127.0.0.1 300001 				//(nc = netcat) Ecoute le port 30000 du localhost | nc = pour tout ce qui est UDP ou TCP
+nc 127.0.0.1 300001 			//(nc = netcat) Ecoute le port 30000 du localhost | nc = pour tout ce qui est UDP ou TCP
+nc -k -l localhost 22222		//-k force nc a ecouter uen autre connection sur le port 22222
 echo "blabla" | nc 127.0.0.1 66 //Envoi blabla sur le port 66 du localhost pour tester ce que fait le port en fonction nde sa réponse
 netstat -t -l -p 				//Listes tous les ports qui ecoutent et ce a quoi ils servent
 diff fich1 fich2				//Sort toutes les differences entre le fichier1 et le fichier2
-
+job scheduler					//Execute des commandes definies a un interval regulier
 
 
 
