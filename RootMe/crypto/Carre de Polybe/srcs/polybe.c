@@ -6,7 +6,7 @@
 /*   By: vmercadi <vmercadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/27 19:35:30 by vmercadi          #+#    #+#             */
-/*   Updated: 2017/07/21 15:59:47 by vmercadi         ###   ########.fr       */
+/*   Updated: 2017/04/07 16:25:02 by vmercadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 /* 
@@ -37,12 +37,105 @@
 **
 */
 
+
 //
 // RESTE A FAIRE FONCTIONNER SWITCH ALPHABET
 // ET METRE EN PLACE LA RECHERCHE DE MOT
 //
 
-#include "polybe.h"
+
+
+#include "libft.h"
+#include <fcntl.h>
+
+#define VERTI g_c.vertical
+#define HORI g_c.horizontal
+#define ALPHA g_c.alphabet
+#define STR g_c.str
+#define LEN g_c.len
+#define SIZE 1000
+
+typedef struct 		s_carre
+{
+	char			*str; 			//le fichier a decrypter dans une str
+	char			*vertical;		//lettres indexs i
+	char			*horizontal; 	//lettres indexs j
+	char			*alphabet; 		//l'alphabet actuel
+	char			*alphabase;		//L'alphabet de base
+	char			*alphaend;		//Le dernier alphabet envisageable
+	char			c;				//Le tout premier caractere
+	int				len; 			//Longueur de l'index et donc taille du carré
+	size_t			i;				//L'index i dans l'alphabet
+	size_t			j;				//L'index j dans l'alphabet
+}					t_carre;
+t_carre				g_c;
+
+/*
+** L'usage
+*/
+void	usage(int i)
+{
+			ft_putendl("Usage");
+	if (i == 1)
+	{
+		ft_putstrcolor("usage : a.out i j alpha fichier toFind\n", YELLOW);
+		ft_putstrcolor("i       = l'index vertical.", YELLOW);
+		ft_putstrcolor("j       = l'index horizontal.", YELLOW);
+		ft_putstrcolor("alpha   = l'alphabet a mettre dans le carre.", YELLOW);
+		ft_putstrcolor("fichier = le fichier contenant le texte a traduire.\n", YELLOW);
+		ft_putstrcolor("toFind  = Le mot a trouver dans le texte decrypté\n", YELLOW);
+		ft_putstrcolor("RETOUR  : Le texte décrypté qui contient le toFind qu'on lui a passé\n", YELLOW);
+		ft_putstrcolor("Exemple d'utilisation et de carré de polybe : ", GREEN_BOLD);
+		ft_putstrcolor("./a.out abcde 12345 abcdefghijklmnopqrstuvxyz CryptedFile.txt password\n", GREEN_BOLD);
+		ft_putstrcolor("                j			 ", GREEN_BOLD);
+		ft_putstrcolor("    -------------------------", GREEN_BOLD);
+		ft_putstrcolor("    |   | 1 | 2 | 3 | 4 | 5 |", GREEN_BOLD);
+		ft_putstrcolor("    |---|---|---|---|---|---|", GREEN_BOLD);
+		ft_putstrcolor("    | A | a | b | c | d | e |", GREEN_BOLD);
+		ft_putstrcolor("    |---|---|---|---|---|---|", GREEN_BOLD);
+		ft_putstrcolor("    | B | f | g | h | i | j |", GREEN_BOLD);
+		ft_putstrcolor("i   |---|---|---|---|---|---|", GREEN_BOLD);
+		ft_putstrcolor("    | C | k | l | m | n | o |", GREEN_BOLD);
+		ft_putstrcolor("    |---|---|---|---|---|---|", GREEN_BOLD);
+		ft_putstrcolor("    | D | p | q | r | s | t |", GREEN_BOLD);
+		ft_putstrcolor("    |---|---|---|---|---|---|", GREEN_BOLD);
+		ft_putstrcolor("    | E | u | v | x | y | z |", GREEN_BOLD);
+		ft_putstrcolor("    -------------------------", GREEN_BOLD);	
+	}
+	else if (i == 2)
+		ft_putstrcolor("Les indexs doivent etre égaux en taille.", RED_BOLD);
+	else if (i == 3)
+		ft_putstrcolor("L'alphabet passé ne contient pas un nombre correcte de caracteres.", RED_BOLD);
+	else if (i == 4)
+		ft_putstrcolor("ERREUR. Le fichier comprend un caractère non existant dans les indexs.", RED_BOLD);
+	else
+		return ;
+}
+
+/*
+** Calcule la size des indexs par rapport à l'entrée reçu
+*/
+void	def_size()
+{
+
+}
+
+/*
+** Sort les indexs verticaux 
+*/
+void	def_verti()
+{
+	
+}
+
+/*
+** Sort les indexs horizontaux 
+*/
+void	def_hori()
+{
+	
+}
+
 
 /*
 ** Met le contenu d'un fichier dans un char *
@@ -126,6 +219,99 @@ int		check_params(int ac, char **av)
 	STR = file_to_str(av[4]);
 	LEN = ft_strlen(av[1]);
 	return (1);
+}
+
+/*
+** Pour copier un tableau dans un autre
+*/
+char **cp_carre(char **carre, char **dst)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	while (i < LEN)
+	{
+		j = 0;
+		while (j < LEN)
+		{
+			dst[i][j] = carre[i][j];
+			j++;
+		}
+		i++;
+	}
+	return (dst);
+}
+
+/*
+** Affichage du carre
+*/
+void 	print_carre(char **str, int size)
+{
+			ft_putendl("print_carre");
+	int i;
+	int j;
+		ft_putnbrendl(size);
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			ft_putchar(str[i][j]);
+			j++;
+		}
+		i++;
+		ft_putchar('\n');
+	}
+}
+
+/*
+** Rempli le carré avec l'alphabet courant 
+*/
+void	remp_carre(char **carre)
+{
+	int 	i;
+	int		j;
+	int		k;
+
+	i = 0;
+	j = 0;
+	k = 0;
+	while (i < LEN)
+	{
+		j = 0;
+		while (j < LEN)
+		{
+			carre[i][j] = ALPHA[k]; 
+			j++;
+			k++;
+		}
+		carre[i][j] = '\0';
+		i++;
+	}
+}
+
+/*
+** Initialise et rempli le carre.
+*/
+char	**init_carre()
+{
+						ft_putendl("init_carre");
+	char 	**carre;
+	int 	i;
+
+	i = 0;
+	carre = (char **)malloc(sizeof(char *) * LEN + 1);
+	while (i < LEN)
+	{
+		carre[i] = (char *)malloc(sizeof(char) * LEN + 1);
+		i++;
+	}
+	carre[i] = NULL;
+	remp_carre(carre);
+	print_carre(carre, LEN);
+	return (carre);
 }
 
 /*
